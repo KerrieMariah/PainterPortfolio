@@ -287,10 +287,36 @@ export default function Portfolio() {
         }
         .cta-btn {
           font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
-          padding: 16px 40px; border: 1px solid #1a1f3d; background: transparent; color: #1a1f3d;
-          cursor: pointer; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); border-radius: 0;
+          padding: 16px 40px;
+          border-radius: 999px;
+          border: none;
+          background: linear-gradient(120deg, #ffb347, #ff7b7b, #ffcfdf);
+          background-size: 200% 200%;
+          color: #1a1f3d;
+          box-shadow:
+            0 14px 35px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(255, 255, 255, 0.3);
+          cursor: pointer;
+          transition:
+            background-position 0.5s ease,
+            transform 0.18s ease-out,
+            box-shadow 0.18s ease-out,
+            filter 0.25s ease-out;
         }
-        .cta-btn:hover { background: #1a1f3d; color: #f5f2ed; }
+        .cta-btn:hover {
+          background-position: 100% 0%;
+          transform: translateY(-2px) scale(1.01);
+          box-shadow:
+            0 18px 40px rgba(0, 0, 0, 0.35),
+            0 0 0 1px rgba(255, 255, 255, 0.4);
+          filter: saturate(1.3);
+        }
+        .cta-btn:active {
+          transform: translateY(0) scale(0.99);
+          box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #f5f2ed; }
         ::-webkit-scrollbar-thumb { background: #c4bfb6; border-radius: 2px; }
